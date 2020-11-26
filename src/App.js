@@ -69,7 +69,7 @@ function App() {
       <p>Click count: {clicks}</p>
       <form onSubmit={handleSubmit}>
         <label>
-          <b>Pokemon name:</b>&nbsp;
+          <b>Pok&eacute;mon name:</b>&nbsp;
           <input type='text' value={searchTerm} onChange={handleChange}/>
         </label>
         <input type='submit' value='Submit' />
