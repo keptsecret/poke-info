@@ -21,18 +21,31 @@ function Card(props) {
         setTypes(props.data['types']);
     }, [props.data]);
 
-    if (name === '' || !sprites || types === []) {
+    const [moves, setMoves] = useState([]);
+    useEffect(() => {
+        setMoves(props.data['moves']);
+    }, [props.data]);
+
+    if (name === '' || !sprites || types === [] || moves === []) {
         return null;
     }
 
     return (
         props ?
         <div className="Card">
-            <h2>{props.data.id}: {capitalize(name)}</h2>
+            <button className="closeButton"><strong>&#10006;</strong></button>
+            <h2>
+                {props.data.id}: {capitalize(name)}
+            </h2>
             <img src={sprites.front_default} alt={name} />
             <p><span>
-                Type(s): {types.map((type, i) => (
-                    <span key={i}>{type.type.name} </span>
+                <b>Type(s):</b> {types.slice(0, 5).map((type, i) => (
+                    <span key={i}>{type.type.name}, </span>
+                ))}
+            </span></p>
+            <p><span>
+                <b>Move(s):</b> {moves.slice(0, 10).map((move, i) => (
+                    <span key={i}>{move.move.name}, </span>
                 ))}
             </span></p>
         </div> :
