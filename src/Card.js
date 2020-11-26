@@ -21,20 +21,22 @@ function Card(props) {
         setTypes(props.data['types']);
     }, [props.data]);
 
-    if (!name || !sprites || types === []) {
-        return <p>Loading...</p>
+    if (name === '' || !sprites || types === []) {
+        return null;
     }
 
     return (
+        props ?
         <div className="Card">
-            <h2>{capitalize(name)}</h2>
+            <h2>{props.data.id}: {capitalize(name)}</h2>
             <img src={sprites.front_default} alt={name} />
             <p><span>
-                Type(s): {types.map(type => (
-                    <span>{type.type.name} </span>
+                Type(s): {types.map((type, i) => (
+                    <span key={i}>{type.type.name} </span>
                 ))}
             </span></p>
-        </div>
+        </div> :
+        <h3>Loading...</h3>
     );
 }
 

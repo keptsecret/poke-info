@@ -2,13 +2,20 @@
     border: 0.5px;
     margin: 10px;
     background-color: aquamarine;
-    max-width: 300px;
+    width: 300px;
+    min-width: 200px;
     border-style: solid;
     border-radius: 10px;
     box-shadow: 2px 2px 1px grey;
+    display: inline-block;
 }
 
 .Card:hover {
     box-shadow: 5px 5px 2px grey;
     translate: -3px -2px;
+}
+
+.Card:active {
+    box-shadow: 1.5px 1.5px 2px grey;
+    translate: 2px 2px;
 }
