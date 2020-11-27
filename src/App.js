@@ -69,16 +69,20 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Pok&eacute;mon Info</h1>
-      <h3>Find quick information on a pok&eacute;mon by searching for their name (or ID) in the box below</h3>
-      <p>Click counter (for fun): {clicks}</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <b>Pok&eacute;mon name:</b>&nbsp;
-          <input className="searchBox" type='text' value={searchTerm} onChange={handleChange}/>
-        </label>
-        <input className="submitButt" type='submit' value='Search' />
-      </form>
+      <div className="fullwidth">
+        <div className="header">
+          <h1 className="title">Pok&eacute;mon Info</h1>
+          <h3>Find quick information on a pok&eacute;mon by searching for their name (or ID) in the box below</h3>
+          <p>Click counter (for fun): {clicks}</p>
+          <form onSubmit={handleSubmit}>
+            <label>
+              <b>Pok&eacute;mon name:</b>&nbsp;
+              <input className="searchBox" type='text' value={searchTerm} onChange={handleChange}/>
+            </label>
+            <input className="submitButt" type='submit' value='Search' />
+          </form>
+        </div>
+      </div>
       <div>
         {pmonList.map((pmon) => (
           <Card key={pmon.id} data={pmon} onDelete={removePmon}/>

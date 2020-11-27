@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  padding: 10px;
+  padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -37,6 +37,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.fullwidth {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header {
+  background-color: #ef5350;
+  padding: 10px;
+  color: whitesmoke;
+}
+
+.title {
+  color: #ffcb05;
+  -webkit-text-stroke: 10px #3d7dca;
+  paint-order: stroke fill;
+  font-size: 50px;
+  padding: 1px;
+  margin: 10px;
 }
 
 .searchBox {
