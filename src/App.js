@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Card from './Card.js';
+import Card from './Card';
 import './App.css';
 
 const contains = function(a, obj) {
@@ -45,6 +45,10 @@ function App() {
     setSearchTerm(event.target.value.toLowerCase());
   }
 
+  const removePmon = (pmonId) => {
+    setPmonList(prev => (prev.filter(pmon => pmon.id !== pmonId)));
+  }
+
   const handleSubmit = (event) => {
     //setSearchTerm(event.target.value);
     if (searchTerm.length > 0) {
@@ -65,18 +69,19 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello world</h1>
-      <p>Click count: {clicks}</p>
+      <h1>Pok&eacute;mon Info</h1>
+      <h3>Find quick information on a pok&eacute;mon by searching for their name (or ID) in the box below</h3>
+      <p>Click counter (for fun): {clicks}</p>
       <form onSubmit={handleSubmit}>
         <label>
           <b>Pok&eacute;mon name:</b>&nbsp;
-          <input type='text' value={searchTerm} onChange={handleChange}/>
+          <input className="searchBox" type='text' value={searchTerm} onChange={handleChange}/>
         </label>
-        <input type='submit' value='Submit' />
+        <input className="submitButt" type='submit' value='Search' />
       </form>
       <div>
         {pmonList.map((pmon) => (
-          <Card key={pmon.id} data={pmon} />
+          <Card key={pmon.id} data={pmon} onDelete={removePmon}/>
         ))}
       </div>
     </div>

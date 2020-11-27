@@ -26,6 +26,10 @@ function Card(props) {
         setMoves(props.data['moves']);
     }, [props.data]);
 
+    const handleDelete = () => {
+        props.onDelete(props.data.id);
+    }
+
     if (name === '' || !sprites || types === [] || moves === []) {
         return null;
     }
@@ -33,7 +37,7 @@ function Card(props) {
     return (
         props ?
         <div className="Card">
-            <button className="closeButton"><strong>&#10006;</strong></button>
+            <button className="closeButton" onClick={handleDelete}><strong>&#10006;</strong></button>
             <h2>
                 {props.data.id}: {capitalize(name)}
             </h2>
@@ -46,7 +50,7 @@ function Card(props) {
             <p><span>
                 <b>Move(s):</b> {moves.slice(0, 10).map((move, i) => (
                     <span key={i}>{move.move.name}, </span>
-                ))}
+                ))} ...
             </span></p>
         </div> :
         <h3>Loading...</h3>
