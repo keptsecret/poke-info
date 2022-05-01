@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/poke-info/static/css/main.55554137.css",
+    "main.js": "/poke-info/static/js/main.e8548a59.js",
+    "static/js/377.c4f1b99f.chunk.js": "/poke-info/static/js/377.c4f1b99f.chunk.js",
+    "index.html": "/poke-info/index.html",
+    "main.55554137.css.map": "/poke-info/static/css/main.55554137.css.map",
+    "main.e8548a59.js.map": "/poke-info/static/js/main.e8548a59.js.map",
+    "377.c4f1b99f.chunk.js.map": "/poke-info/static/js/377.c4f1b99f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.55554137.css",
+    "static/js/main.e8548a59.js"
+  ]
+}
